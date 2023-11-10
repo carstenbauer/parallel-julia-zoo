@@ -44,7 +44,7 @@ end
 
 funcs = (mapreduction_serial, mapreduction_spawn, mapreduction_atthreads_static, mapreduction_atthreads_dynamic)
 names = ("serial", "spawn", "threads :static", "threads :dynamic")
-N = 100_000_000 * nthreads()
+N = 10_000 * nthreads()
 
 for nchunks in (nthreads(), 100 * nthreads())
     println("\n\n nchunks = ", nchunks)

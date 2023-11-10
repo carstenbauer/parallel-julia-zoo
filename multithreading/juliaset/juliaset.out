@@ -1,0 +1,40 @@
+Julia Version 1.9.3
+Commit bed2cd540a1 (2023-08-24 14:43 UTC)
+Build Info:
+  Official https://julialang.org/ release
+Platform Info:
+  OS: Linux (x86_64-linux-gnu)
+  CPU: 128 × AMD EPYC 7763 64-Core Processor
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-14.0.6 (ORCJIT, znver3)
+  Threads: 8 on 128 virtual cores
+Environment:
+  LD_LIBRARY_PATH = /opt/software/pc2/EB-SW/software/JuliaHPC/1.9.3-foss-2022a-CUDA-11.7.0/lib:/opt/software/pc2/EB-SW/software/GDRCopy/2.3-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/CUDA/11.7.0/nvvm/lib64:/opt/software/pc2/EB-SW/software/CUDA/11.7.0/extras/CUPTI/lib64:/opt/software/pc2/EB-SW/software/CUDA/11.7.0/lib:/opt/software/pc2/EB-SW/software/ScaLAPACK/2.2.0-gompi-2022a-fb/lib:/opt/software/pc2/EB-SW/software/FFTW.MPI/3.3.10-gompi-2022a/lib:/opt/software/pc2/EB-SW/software/FFTW/3.3.10-GCC-11.3.0/lib:/opt/software/pc2/EB-SW/software/FlexiBLAS/3.2.0-GCC-11.3.0/lib:/opt/software/pc2/EB-SW/software/OpenBLAS/0.3.20-GCC-11.3.0/lib:/opt/software/pc2/EB-SW/software/OpenMPI/4.1.4-GCC-11.3.0/lib:/opt/software/pc2/EB-SW/software/UCC/1.0.0-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/PMIx/4.1.2-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/libfabric/1.15.1-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/UCX/1.12.1-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/libevent/2.1.12-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/OpenSSL/1.1/lib:/opt/software/pc2/EB-SW/software/hwloc/2.7.1-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/libpciaccess/0.16-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/libxml2/2.9.13-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/XZ/5.2.5-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/numactl/2.0.14-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/binutils/2.38-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/zlib/1.2.12-GCCcore-11.3.0/lib:/opt/software/pc2/EB-SW/software/GCCcore/11.3.0/lib64:/pc2/users/b/bauerc/.local/lib:/opt/software/slurm/22.05.10-1/lib
+  JULIA_CUDA_MEMORY_POOL = none
+  JULIA_DEPOT_PATH = /scratch/pc2-mitarbeiter/bauerc/.julia
+  JULIA_PKG_SERVER = eu-central.pkg.julialang.org
+  JULIA_LOAD_PATH = :/opt/software/pc2/EB-SW/software/JuliaHPC/1.9.3-foss-2022a-CUDA-11.7.0
+  JULIA_EDITOR = vim
+  JULIA_DEPOT_PATH_CI = /scratch/pc2-mitarbeiter/bauerc/.julia-ci
+
+
+ correctness check
+	 serial
+		 true
+	 spawn
+		 true
+	 threads :dynamic
+		 true
+	 threads :static
+		 true
+
+ benchmark
+	 serial
+  2.151 s (0 allocations: 0 bytes)
+	 spawn
+  273.109 ms (40022 allocations: 4.03 MiB)
+	 threads :dynamic
+  542.069 ms (50 allocations: 4.59 KiB)
+	 threads :static
+  541.376 ms (52 allocations: 4.68 KiB)
