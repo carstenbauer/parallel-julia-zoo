@@ -56,9 +56,18 @@ function axpy_atthreads_dynamic!(y, a, x; chunks)
     return y
 end
 
+function axpy_atthreads_greedy!(y, a, x; chunks)
+    @threads :greedy for (idcs, _) in chunks
+        @simd for i in idcs
+            @inbounds y[i] = a * x[i] + y[i]
+        end
+    end
+    return y
+end
+
 # Benchmark
-funcs = (axpy_serial!, axpy_atthreads_static!, axpy_atthreads_dynamic!, axpy_spawn!)
-names = ("serial", "threads :static", "threads :dynamic", "spawn")
+funcs = (axpy_serial!, axpy_atthreads_static!, axpy_atthreads_dynamic!, axpy_spawn!, axpy_atthreads_greedy!)
+names = ("serial", "threads :static", "threads :dynamic", "spawn", "threads :greedy")
 N = 2^30
 for nchunks in (nthreads(), 1000 * nthreads())
     println("\n\n nchunks = ", nchunks)

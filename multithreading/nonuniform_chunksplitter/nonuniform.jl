@@ -78,11 +78,23 @@ function nonuniform_atthreads_static(x, work_load; nchunks=nthreads(), chunk_typ
     return sum(chunk_sums)
 end
 
+function nonuniform_atthreads_greedy(x, work_load; nchunks=nthreads(), chunk_type=:batch)
+    chunk_sums = Vector{eltype(x)}(undef, nchunks)
+    @threads :greedy for (idcs, ichunk) in chunks(work_load, nchunks, chunk_type)
+        s = zero(eltype(x))
+        for i in idcs
+            s += sum(j -> log(x[j])^7, 1:work_load[i])
+        end
+        chunk_sums[ichunk] = s
+    end
+    return sum(chunk_sums)
+end
+
 x = rand(10^9);
 
 # Benchmark
-funcs = (nonuniform_serial, nonuniform_spawn, nonuniform_atthreads_static, nonuniform_atthreads_dynamic)
-names = ("serial", "spawn", "threads :static", "threads :dynamic")
+funcs = (nonuniform_serial, nonuniform_spawn, nonuniform_atthreads_static, nonuniform_atthreads_dynamic, nonuniform_atthreads_greedy)
+names = ("serial", "spawn", "threads :static", "threads :dynamic", "threads :greedy")
 nchunks = nthreads()
 
 println("\n\n correctness check")

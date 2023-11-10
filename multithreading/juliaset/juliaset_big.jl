@@ -82,7 +82,7 @@ end
 funcs = (compute_juliaset_serial!, compute_juliaset_spawn!, compute_juliaset_threads_dynamic!, compute_juliaset_threads_static!, compute_juliaset_threads_greedy!)
 names = ("serial", "spawn", "threads :dynamic", "threads :static", "threads :greedy")
 
-N = 8000
+N = 12_000
 img = zeros(Int, N, N)
 
 println("\n\n correctness check")

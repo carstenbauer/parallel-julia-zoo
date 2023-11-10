@@ -42,8 +42,16 @@ function mapreduction_atthreads_dynamic(f::F, op::G, x; nchunks=nthreads()) wher
     return mapreduction_serial(identity, op, rs)
 end
 
-funcs = (mapreduction_serial, mapreduction_spawn, mapreduction_atthreads_static, mapreduction_atthreads_dynamic)
-names = ("serial", "spawn", "threads :static", "threads :dynamic")
+function mapreduction_atthreads_greedy(f::F, op::G, x; nchunks=nthreads()) where {F,G}
+    rs = Vector{eltype(x)}(undef, nchunks)
+    @threads :greedy for (idcs, c) in chunks(x, nchunks)
+        @inbounds rs[c] = mapreduction_serial(f, op, @view x[idcs])
+    end
+    return mapreduction_serial(identity, op, rs)
+end
+
+funcs = (mapreduction_serial, mapreduction_spawn, mapreduction_atthreads_static, mapreduction_atthreads_dynamic, mapreduction_atthreads_greedy)
+names = ("serial", "spawn", "threads :static", "threads :dynamic", "threads :greedy")
 N = 100_000_000 * nthreads()
 
 for nchunks in (nthreads(), 100 * nthreads())

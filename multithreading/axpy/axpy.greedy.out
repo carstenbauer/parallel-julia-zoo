@@ -1,0 +1,68 @@
+Julia Version 1.11.0-DEV.820
+Commit 013fbf7a17 (2023-11-10 09:42 UTC)
+Platform Info:
+  OS: Linux (x86_64-pc-linux-gnu)
+  CPU: 128 × AMD EPYC 7763 64-Core Processor
+  WORD_SIZE: 64
+  LLVM: libLLVM-15.0.7 (ORCJIT, znver3)
+  Threads: 11 on 128 virtual cores
+Environment:
+  LD_LIBRARY_PATH = 
+  JULIA_DEPOT_PATH = /scratch/pc2-mitarbeiter/bauerc/.julia
+  JULIA_PKG_SERVER = eu-central.pkg.julialang.org
+  JULIA_EDITOR = vim
+  JULIA_DEPOT_PATH_CI = /scratch/pc2-mitarbeiter/bauerc/.julia-ci
+
+
+ nchunks = 8
+
+ correctness check
+	 serial
+		 true
+	 threads :static
+		 true
+	 threads :dynamic
+		 true
+	 spawn
+		 true
+	 threads :greedy
+		 true
+
+ benchmark
+	 serial
+  910.239 ms (0 allocations: 0 bytes)
+	 threads :static
+  104.524 ms (42 allocations: 4.50 KiB)
+	 threads :dynamic
+  182.917 ms (42 allocations: 4.50 KiB)
+	 spawn
+  169.908 ms (49 allocations: 4.67 KiB)
+	 threads :greedy
+  181.578 ms (62 allocations: 6.02 KiB)
+
+
+ nchunks = 8000
+
+ correctness check
+	 serial
+		 true
+	 threads :static
+		 true
+	 threads :dynamic
+		 true
+	 spawn
+		 true
+	 threads :greedy
+		 true
+
+ benchmark
+	 serial
+  909.950 ms (0 allocations: 0 bytes)
+	 threads :static
+  105.039 ms (42 allocations: 4.50 KiB)
+	 threads :dynamic
+  172.144 ms (42 allocations: 4.50 KiB)
+	 spawn
+  393.542 ms (40019 allocations: 4.27 MiB)
+	 threads :greedy
+  602.252 ms (64 allocations: 7.48 KiB)

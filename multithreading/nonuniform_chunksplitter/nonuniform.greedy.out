@@ -1,0 +1,91 @@
+Julia Version 1.11.0-DEV.820
+Commit 013fbf7a17 (2023-11-10 09:42 UTC)
+Platform Info:
+  OS: Linux (x86_64-pc-linux-gnu)
+  CPU: 128 × AMD EPYC 7763 64-Core Processor
+  WORD_SIZE: 64
+  LLVM: libLLVM-15.0.7 (ORCJIT, znver3)
+  Threads: 11 on 128 virtual cores
+Environment:
+  LD_LIBRARY_PATH = 
+  JULIA_DEPOT_PATH = /scratch/pc2-mitarbeiter/bauerc/.julia
+  JULIA_PKG_SERVER = eu-central.pkg.julialang.org
+  JULIA_EDITOR = vim
+  JULIA_DEPOT_PATH_CI = /scratch/pc2-mitarbeiter/bauerc/.julia-ci
+
+
+ correctness check
+	 serial
+		 true
+	 spawn
+		 true
+	 threads :static
+		 true
+	 threads :dynamic
+		 true
+	 threads :greedy
+		 true
+
+ benchmark
+	 serial
+  6.255 ms (0 allocations: 0 bytes)
+	 spawn
+  2.593 ms (60 allocations: 4.78 KiB)
+	 threads :static
+  2.613 ms (44 allocations: 4.50 KiB)
+	 threads :dynamic
+  2.647 ms (44 allocations: 4.50 KiB)
+	 threads :greedy
+  2.630 ms (64 allocations: 6.14 KiB)
+
+
+  ---- nchunks >> nthreads
+correctness check
+	 serial
+		 true
+	 spawn
+		 true
+	 threads :static
+		 true
+	 threads :dynamic
+		 true
+	 threads :greedy
+		 true
+
+ benchmark
+	 serial
+  6.122 ms (0 allocations: 0 bytes)
+	 spawn
+  984.243 μs (4814 allocations: 437.91 KiB)
+	 threads :static
+  2.918 ms (45 allocations: 10.69 KiB)
+	 threads :dynamic
+  2.947 ms (45 allocations: 10.69 KiB)
+	 threads :greedy
+  1.708 ms (73 allocations: 14.37 KiB)
+
+
+  ---- :scatter chunking
+correctness check
+	 serial
+		 true
+	 spawn
+		 true
+	 threads :static
+		 true
+	 threads :dynamic
+		 true
+	 threads :greedy
+		 true
+
+ benchmark
+	 serial
+  6.125 ms (0 allocations: 0 bytes)
+	 spawn
+  834.396 μs (60 allocations: 4.78 KiB)
+	 threads :static
+  840.212 μs (44 allocations: 4.50 KiB)
+	 threads :dynamic
+  839.852 μs (44 allocations: 4.50 KiB)
+	 threads :greedy
+  844.503 μs (64 allocations: 6.14 KiB)

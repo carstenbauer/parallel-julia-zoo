@@ -1,0 +1,120 @@
+Julia Version 1.11.0-DEV.820
+Commit 013fbf7a17 (2023-11-10 09:42 UTC)
+Platform Info:
+  OS: Linux (x86_64-pc-linux-gnu)
+  CPU: 128 × AMD EPYC 7763 64-Core Processor
+  WORD_SIZE: 64
+  LLVM: libLLVM-15.0.7 (ORCJIT, znver3)
+  Threads: 11 on 128 virtual cores
+Environment:
+  LD_LIBRARY_PATH = 
+  JULIA_DEPOT_PATH = /scratch/pc2-mitarbeiter/bauerc/.julia
+  JULIA_PKG_SERVER = eu-central.pkg.julialang.org
+  JULIA_EDITOR = vim
+  JULIA_DEPOT_PATH_CI = /scratch/pc2-mitarbeiter/bauerc/.julia-ci
+
+
+ nchunks = 8
+
+ 	 f = identity
+correctness check
+		 serial
+			 true
+		 spawn
+			 true
+		 threads :static
+			 true
+		 threads :dynamic
+			 true
+		 threads :greedy
+			 true
+
+ benchmark
+		 serial
+  8.953 μs (0 allocations: 0 bytes)
+		 spawn
+  8.120 μs (60 allocations: 4.78 KiB)
+		 threads :static
+  6.560 μs (44 allocations: 4.50 KiB)
+		 threads :dynamic
+  6.580 μs (44 allocations: 4.50 KiB)
+		 threads :greedy
+  14.757 μs (64 allocations: 6.03 KiB)
+
+ 	 f = sin
+correctness check
+		 serial
+			 true
+		 spawn
+			 true
+		 threads :static
+			 true
+		 threads :dynamic
+			 true
+		 threads :greedy
+			 true
+
+ benchmark
+		 serial
+  589.754 μs (0 allocations: 0 bytes)
+		 spawn
+  88.194 μs (60 allocations: 4.78 KiB)
+		 threads :static
+  89.781 μs (44 allocations: 4.50 KiB)
+		 threads :dynamic
+  85.754 μs (44 allocations: 4.50 KiB)
+		 threads :greedy
+  89.260 μs (64 allocations: 6.00 KiB)
+
+
+ nchunks = 800
+
+ 	 f = identity
+correctness check
+		 serial
+			 true
+		 spawn
+			 true
+		 threads :static
+			 true
+		 threads :dynamic
+			 true
+		 threads :greedy
+			 true
+
+ benchmark
+		 serial
+  8.344 μs (0 allocations: 0 bytes)
+		 spawn
+  402.989 μs (4814 allocations: 437.91 KiB)
+		 threads :static
+  10.310 μs (45 allocations: 10.69 KiB)
+		 threads :dynamic
+  11.857 μs (45 allocations: 10.69 KiB)
+		 threads :greedy
+  1.622 ms (72 allocations: 14.18 KiB)
+
+ 	 f = sin
+correctness check
+		 serial
+			 true
+		 spawn
+			 true
+		 threads :static
+			 true
+		 threads :dynamic
+			 true
+		 threads :greedy
+			 true
+
+ benchmark
+		 serial
+  589.951 μs (0 allocations: 0 bytes)
+		 spawn
+  430.513 μs (4814 allocations: 437.91 KiB)
+		 threads :static
+  76.664 μs (45 allocations: 10.69 KiB)
+		 threads :dynamic
+  92.247 μs (45 allocations: 10.69 KiB)
+		 threads :greedy
+  1.490 ms (72 allocations: 14.13 KiB)
