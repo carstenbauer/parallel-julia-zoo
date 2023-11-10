@@ -1,0 +1,36 @@
+Julia Version 1.10.0-rc1
+Commit 5aaa9485436 (2023-11-03 07:44 UTC)
+Build Info:
+  Official https://julialang.org/ release
+Platform Info:
+  OS: Linux (x86_64-linux-gnu)
+  CPU: 8 × 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-15.0.7 (ORCJIT, tigerlake)
+  Threads: 5 on 8 virtual cores
+Environment:
+  JULIA_NUM_THREADS = 4
+  JULIA_EDITOR = nvim
+  JULIA_PYTHONCALL_EXE = /usr/bin/python
+
+
+ correctness check
+	 serial
+		 true
+	 spawn
+		 true
+	 threads :dynamic
+		 true
+	 threads :static
+		 true
+
+ benchmark
+	 serial
+  1.709 ms (1 allocation: 496 bytes)
+	 spawn
+  1.066 ms (7212 allocations: 641.34 KiB)
+	 threads :dynamic
+  1.682 ms (22 allocations: 2.62 KiB)
+	 threads :static
+  1.873 ms (22 allocations: 2.62 KiB)
