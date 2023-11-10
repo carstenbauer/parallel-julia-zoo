@@ -29,8 +29,8 @@ Environment:
 	 serial
   1.709 ms (1 allocation: 496 bytes)
 	 spawn
-  1.066 ms (7212 allocations: 641.34 KiB)
+  1.050 ms (7212 allocations: 641.34 KiB)
 	 threads :dynamic
-  1.682 ms (22 allocations: 2.62 KiB)
+  1.907 ms (22 allocations: 2.62 KiB)
 	 threads :static
-  1.873 ms (22 allocations: 2.62 KiB)
+  1.613 ms (22 allocations: 2.62 KiB)

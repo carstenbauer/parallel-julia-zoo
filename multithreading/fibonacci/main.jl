@@ -79,6 +79,6 @@ end
 println("\n benchmark")
 for (func, n) in zip(funcs, names)
     println("\t $n")
-    @btime $func($N) samples = 5 evals = 3
+    @btime $func($N) samples = 8 evals = 5
 end
 flush(stdout)
