@@ -1,0 +1,1 @@
+mpiexecjl --project -n 5 julia montecarlo_pi.jl
