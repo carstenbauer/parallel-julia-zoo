@@ -55,7 +55,7 @@ end
 
 function pis_threads_serial(Ns)
     pis = Vector{Float64}(undef, length(Ns))
-    @threads for i in eachindex(Ns)
+    @threads :dynamic for i in eachindex(Ns)
         @inbounds pis[i] = pi_serial(Ns[i])
     end
     return pis
@@ -70,7 +70,7 @@ end
 
 function pis_threads_threads(Ns)
     pis = Vector{Float64}(undef, length(Ns))
-    @threads for i in eachindex(Ns)
+    @threads :dynamic for i in eachindex(Ns)
         @inbounds pis[i] = pi_parallel_threads(Ns[i])
     end
     return pis
