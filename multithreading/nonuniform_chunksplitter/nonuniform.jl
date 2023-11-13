@@ -44,7 +44,7 @@ end
 function nonuniform_spawn(x, work_load; nchunks=nthreads(), chunk_type=:batch)
     ts = map(chunks(work_load, nchunks, chunk_type)) do (idcs, ichunk)
         @spawn begin
-            s = zero(eltype(x))
+            local s = zero(eltype(x))
             for i in idcs
                 s += sum(log(x[j])^7 for j in 1:work_load[i])
             end
@@ -57,7 +57,7 @@ end
 function nonuniform_atthreads_dynamic(x, work_load; nchunks=nthreads(), chunk_type=:batch)
     chunk_sums = Vector{eltype(x)}(undef, nchunks)
     @threads :dynamic for (idcs, ichunk) in chunks(work_load, nchunks, chunk_type)
-        s = zero(eltype(x))
+        local s = zero(eltype(x))
         for i in idcs
             s += sum(j -> log(x[j])^7, 1:work_load[i])
         end
@@ -69,7 +69,7 @@ end
 function nonuniform_atthreads_static(x, work_load; nchunks=nthreads(), chunk_type=:batch)
     chunk_sums = Vector{eltype(x)}(undef, nchunks)
     @threads :static for (idcs, ichunk) in chunks(work_load, nchunks, chunk_type)
-        s = zero(eltype(x))
+        local s = zero(eltype(x))
         for i in idcs
             s += sum(j -> log(x[j])^7, 1:work_load[i])
         end
