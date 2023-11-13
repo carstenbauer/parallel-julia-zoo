@@ -1,0 +1,6 @@
+local_result = MyType(0.0f0, 0, [0, 0])
+local_result = MyType(10.0f0, 10, [10, 10])
+local_result = MyType(20.0f0, 20, [20, 20])
+local_result = MyType(30.0f0, 30, [30, 30])
+local_result = MyType(40.0f0, 40, [40, 40])
+Total result: MyType(100.0f0, 100, [100, 100])

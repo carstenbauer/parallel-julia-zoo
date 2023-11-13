@@ -1,0 +1,21 @@
+Broadcast: MPI builtin
+number of ranks        =        8
+walltime               =     1.46 sec
+size of the vector     =     2.15 GB
+send and recv messages =    30.06 GB
+bandwidth              =    20.64 GB/s
+
+Broadcast: binary tree
+number of ranks        =        8
+walltime               =     1.56 sec
+size of the vector     =     2.15 GB
+send and recv messages =    30.06 GB
+bandwidth              =    19.24 GB/s
+
+Broadcast: sequential (naive)
+number of ranks        =        8
+walltime               =     3.11 sec
+size of the vector     =     2.15 GB
+send and recv messages =    30.06 GB
+bandwidth              =     9.67 GB/s
+
