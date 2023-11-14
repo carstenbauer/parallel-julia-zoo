@@ -1,0 +1,1 @@
+mpiexecjl --project -n 2 julia mpi_unknown_size.jl
