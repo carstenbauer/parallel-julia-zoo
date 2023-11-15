@@ -1,0 +1,26 @@
+Blocking communication
+Step 10000
+Step 20000
+Step 30000
+Step 40000
+Step 50000
+Step 60000
+Step 70000
+Step 80000
+Step 90000
+Step 100000
+total time: 6.8 sec
+
+
+Non-blocking communication (overlapping with computation)
+Step 10000
+Step 20000
+Step 30000
+Step 40000
+Step 50000
+Step 60000
+Step 70000
+Step 80000
+Step 90000
+Step 100000
+total time: 1.46 sec
