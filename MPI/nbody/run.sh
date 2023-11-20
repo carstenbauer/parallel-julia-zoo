@@ -1,0 +1,1 @@
+mpiexecjl --project -n 2 julia nbody.jl
