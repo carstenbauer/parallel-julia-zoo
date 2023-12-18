@@ -7,7 +7,7 @@ function main()
     for pid in workers()
         @spawnat pid put!(rc, myid())
     end
-/
+    
     # Alternatively:
     # @everywhere workers() put!($rc, myid())
 
